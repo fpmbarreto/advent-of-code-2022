@@ -5,8 +5,10 @@ void main(void){
     fp = fopen("input.txt", "r");
     
     char str[7];
-    int 
+    int str_to_int=0;
+    int max = 0;
     int total = 0;
+    char flag = 1;
 
     if(fp == NULL){
         printf("Error opening .txt file");
@@ -14,12 +16,21 @@ void main(void){
 
     printf("List of calories:\n\r");
 
-    while(fgets(str, sizeof(str),fp)){
-        puts(str);
-        if(str!="\n"){
-            total  += int(str);
+    while(fgets(str, sizeof(str),fp)!=NULL){
+        str_to_int = atoi(str);
+        if(str_to_int != 0){
+            total  += str_to_int;
         }
-        else
-        printf("%s",str);
+        else{
+            if(max<total){
+                max = total;
+            }
+            total=0;
+        }
     }
+
+    printf("%d",max);
+
+    fclose(fp);
+    return;
 }

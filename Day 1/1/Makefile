@@ -1,4 +1,6 @@
-build : output.o
+jobs : clean build run
+
+build : output.o 
 
 output.o : puzzle1-day1.c
 	gcc $^ -o $@
