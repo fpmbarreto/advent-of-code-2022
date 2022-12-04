@@ -1,4 +1,3 @@
-#include "stdint.h"
 #include "stdio.h"
 
 void main(void){
@@ -6,6 +5,8 @@ void main(void){
     fp = fopen("input.txt", "r");
     
     char str[7];
+    int 
+    int total = 0;
 
     if(fp == NULL){
         printf("Error opening .txt file");
@@ -15,6 +16,10 @@ void main(void){
 
     while(fgets(str, sizeof(str),fp)){
         puts(str);
+        if(str!="\n"){
+            total  += int(str);
+        }
+        else
         printf("%s",str);
     }
 }
