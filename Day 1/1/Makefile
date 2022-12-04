@@ -1,12 +1,22 @@
-jobs : clean build run
+1 : build1 run1
 
-build : output.o 
+2 : build2 run2 
 
-output.o : puzzle1-day1.c
+build1 : output1.o 
+
+output1.o : puzzle1.c
 	gcc $^ -o $@
 
-run :
-	./output.o
+run1 :
+	./output1.o
+
+build2 : output2.o 
+
+output2.o : puzzle2.c
+	gcc $^ -o $@
+
+run2 :
+	./output2.o
 
 clean :
-	rm *.o
+	rm output1.o || rm output2.o
