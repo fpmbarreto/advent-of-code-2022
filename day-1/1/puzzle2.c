@@ -8,10 +8,7 @@ void main(void){
     int top3[] = {0,0,0};
     int top3_total = 0;
     int str_to_int=0;
-    int max = 0;
     int total = 0;
-    char flag = 1;
-    char wait[1];
     char i = 0;
 
     if(fp == NULL){
@@ -31,6 +28,7 @@ void main(void){
 
             if(i<3){
                 top3[i] = total;    
+                i++;
             }
 
             else{
@@ -48,7 +46,6 @@ void main(void){
             }
             //printf("%d\n%d\n%d\n\n",top3[0],top3[1],top3[2]);
             total=0;
-            i++;
         }
     }
 
